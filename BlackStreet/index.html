@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLACK STREET - Premium Urban Fashion</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <p>🔥 FRETE GRÁTIS EM COMPRAS ACIMA DE R$ 150 | 20% OFF NOVOS PRODUTOS</p>
+            </div>
+        </div>
+        
+        <div class="header-main">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <h1>BLACK STREET</h1>
+                        <span>URBAN FASHION</span>
+                    </div>
+                    
+                    <div class="search-bar">
+                        <input type="text" id="search-input" placeholder="Buscar produtos...">
+                        <button id="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="header-actions">
+                        <button class="btn-icon" id="wishlist-btn">
+                            <i class="fas fa-heart"></i>
+                            <span class="badge" id="wishlist-count">0</span>
+                        </button>
+                        <button class="btn-icon" id="cart-btn">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span class="badge" id="cart-count">0</span>
+                        </button>
+                        <button class="btn-icon" id="account-btn">
+                            <i class="fas fa-user"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <nav class="nav">
+                    <ul class="nav-menu">
+                        <li><a href="#" class="nav-link active" data-category="all">TODOS</a></li>
+                        <li><a href="#" class="nav-link" data-category="hoodies">HOODIES</a></li>
+                        <li><a href="#" class="nav-link" data-category="tshirts">CAMISETAS</a></li>
+                        <li><a href="#" class="nav-link" data-category="pants">CALÇAS</a></li>
+                        <li><a href="#" class="nav-link" data-category="shoes">TÊNIS</a></li>
+                        <li><a href="#" class="nav-link" data-category="accessories">ACESSÓRIOS</a></li>
+                        <li><a href="#" class="nav-link" data-category="sale">PROMOÇÕES</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>NOVA COLEÇÃO</h2>
+                <h1>URBAN STREETWEAR</h1>
+                <p>Descubra as últimas tendências em moda urbana. Qualidade premium encontra estilo street.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" id="shop-now-btn">COMPRAR AGORA</button>
+                    <button class="btn-secondary" id="view-lookbook-btn">VER LOOKBOOK</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-badge">
+                    <span class="badge-text">20% OFF</span>
+                    <span class="badge-subtitle">NOVOS PRODUTOS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters and Sort -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-content">
+                <div class="filters-left">
+                    <div class="filter-group">
+                        <label>Categoria:</label>
+                        <select id="category-filter">
+                            <option value="all">Todas as Categorias</option>
+                            <option value="hoodies">Hoodies</option>
+                            <option value="tshirts">Camisetas</option>
+                            <option value="pants">Calças</option>
+                            <option value="shoes">Tênis</option>
+                            <option value="accessories">Acessórios</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label>Preço:</label>
+                        <select id="price-filter">
+                            <option value="all">Todos os Preços</option>
+                            <option value="0-50">R$ 0 - R$ 50</option>
+                            <option value="50-100">R$ 50 - R$ 100</option>
+                            <option value="100-200">R$ 100 - R$ 200</option>
+                            <option value="200+">R$ 200+</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label>Tamanho:</label>
+                        <select id="size-filter">
+                            <option value="all">Todos os Tamanhos</option>
+                            <option value="xs">XS</option>
+                            <option value="s">S</option>
+                            <option value="m">M</option>
+                            <option value="l">L</option>
+                            <option value="xl">XL</option>
+                            <option value="xxl">XXL</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label>Ordenar por:</label>
+                        <select id="sort-filter">
+                            <option value="featured">Destaques</option>
+                            <option value="price-low">Preço: Menor para Maior</option>
+                            <option value="price-high">Preço: Maior para Menor</option>
+                            <option value="newest">Mais Recentes</option>
+                            <option value="rating">Melhor Avaliados</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="filters-right">
+                    <div class="view-controls">
+                        <button class="view-btn active" data-view="grid">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button class="view-btn" data-view="list">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="results-info">
+                        <span id="results-count">24 produtos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-grid" id="products-container">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+            
+            <div class="load-more">
+                <button class="btn-secondary" id="load-more-btn">
+                    CARREGAR MAIS PRODUTOS
+                </button>
+          </div>
+        </div>
+      </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Carrinho de Compras</h3>
+            <button class="close-btn" id="close-cart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be loaded here -->
+        </div>
+        
+        <div class="cart-footer">
+            <div class="cart-subtotal">
+                <span>Subtotal:</span>
+                <span class="subtotal-price" id="cart-subtotal">R$ 0,00</span>
+            </div>
+            <div class="cart-shipping">
+                <span>Frete:</span>
+                <span class="shipping-price" id="cart-shipping">R$ 0,00</span>
+            </div>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-price" id="cart-total">R$ 0,00</span>
+            </div>
+            <button class="btn-primary" id="checkout-btn">FINALIZAR COMPRA</button>
+            <button class="btn-secondary" id="continue-shopping">Continuar Comprando</button>
+        </div>
+    </div>
+
+    <!-- Product Modal -->
+    <div class="modal" id="product-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close-btn" id="close-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Product details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkout-modal">
+        <div class="modal-content checkout-modal">
+            <div class="modal-header">
+                <h3>Finalizar Compra</h3>
+                <button class="close-btn" id="close-checkout">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="checkout-steps">
+                    <!-- Step 1: Shipping Information -->
+                    <div class="checkout-step active" id="step-1">
+                        <h4>Informações de Entrega</h4>
+                        <form id="shipping-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Nome Completo *</label>
+                                    <input type="text" id="full-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>CPF *</label>
+                                    <input type="text" id="cpf" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Email *</label>
+                                    <input type="email" id="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Telefone *</label>
+                                    <input type="tel" id="phone" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>CEP *</label>
+                                <input type="text" id="cep" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Endereço *</label>
+                                <input type="text" id="address" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Número *</label>
+                                    <input type="text" id="number" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Complemento</label>
+                                    <input type="text" id="complement">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Bairro *</label>
+                                    <input type="text" id="neighborhood" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Cidade *</label>
+                                    <input type="text" id="city" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Estado *</label>
+                                <select id="state" required>
+                                    <option value="">Selecione o Estado</option>
+                                    <option value="AC">Acre</option>
+                                    <option value="AL">Alagoas</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="AM">Amazonas</option>
+                                    <option value="BA">Bahia</option>
+                                    <option value="CE">Ceará</option>
+                                    <option value="DF">Distrito Federal</option>
+                                    <option value="ES">Espírito Santo</option>
+                                    <option value="GO">Goiás</option>
+                                    <option value="MA">Maranhão</option>
+                                    <option value="MT">Mato Grosso</option>
+                                    <option value="MS">Mato Grosso do Sul</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="PA">Pará</option>
+                                    <option value="PB">Paraíba</option>
+                                    <option value="PR">Paraná</option>
+                                    <option value="PE">Pernambuco</option>
+                                    <option value="PI">Piauí</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="RN">Rio Grande do Norte</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                    <option value="RO">Rondônia</option>
+                
+                                    <option value="RR">Roraima</option>
+                                    <option value="SC">Santa Catarina</option>
+                                    <option value="SP">São Paulo</option>
+                                    <option value="SE">Sergipe</option>
+                                    <option value="TO">Tocantins</option>
+                                </select>
+                            </div>
+                        </form>
+                        <div class="step-actions">
+                            <button class="btn-primary" onclick="store.nextStep()">Próximo</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Shipping Options -->
+                    <div class="checkout-step" id="step-2">
+                        <h4>Opções de Entrega</h4>
+                        <div class="shipping-options">
+                            <div class="shipping-option">
+                                <input type="radio" name="shipping" id="shipping-standard" value="standard" checked>
+                                <label for="shipping-standard">
+                                    <div class="shipping-info">
+                                        <span class="shipping-name">Entrega Padrão</span>
+                                        <span class="shipping-time">5-7 dias úteis</span>
+                                    </div>
+                                    <span class="shipping-price">R$ 15,90</span>
+                                </label>
+                            </div>
+                            <div class="shipping-option">
+                                <input type="radio" name="shipping" id="shipping-express" value="express">
+                                <label for="shipping-express">
+                                    <div class="shipping-info">
+                                        <span class="shipping-name">Entrega Expressa</span>
+                                        <span class="shipping-time">2-3 dias úteis</span>
+                                    </div>
+                                    <span class="shipping-price">R$ 29,90</span>
+                                </label>
+                            </div>
+                            <div class="shipping-option">
+                                <input type="radio" name="shipping" id="shipping-free" value="free">
+                                <label for="shipping-free">
+                                    <div class="shipping-info">
+                                        <span class="shipping-name">Frete Grátis</span>
+                                        <span class="shipping-time">5-7 dias úteis</span>
+                                    </div>
+                                    <span class="shipping-price">GRÁTIS</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="step-actions">
+                            <button class="btn-secondary" onclick="store.prevStep()">Anterior</button>
+                            <button class="btn-primary" onclick="store.nextStep()">Próximo</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Payment -->
+                    <div class="checkout-step" id="step-3">
+                        <h4>Forma de Pagamento</h4>
+                        <div class="payment-options">
+                            <div class="payment-option">
+                                <input type="radio" name="payment" id="payment-card" value="card" checked>
+                                <label for="payment-card">
+                                    <i class="fas fa-credit-card"></i>
+                                    <span>Cartão de Crédito</span>
+                                </label>
+                            </div>
+                            <div class="payment-option">
+                                <input type="radio" name="payment" id="payment-pix" value="pix">
+                                <label for="payment-pix">
+                                    <i class="fas fa-qrcode"></i>
+                                    <span>PIX</span>
+                                </label>
+                            </div>
+                            <div class="payment-option">
+                                <input type="radio" name="payment" id="payment-boleto" value="boleto">
+                                <label for="payment-boleto">
+                                    <i class="fas fa-barcode"></i>
+                                    <span>Boleto Bancário</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Credit Card Form -->
+                        <div class="payment-form" id="card-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Número do Cartão *</label>
+                                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Nome no Cartão *</label>
+                                    <input type="text" id="card-name" placeholder="Como está impresso no cartão">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Validade *</label>
+                                    <input type="text" id="card-expiry" placeholder="MM/AA" maxlength="5">
+                                </div>
+                                <div class="form-group">
+                                    <label>CVV *</label>
+                                    <input type="text" id="card-cvv" placeholder="123" maxlength="4">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Parcelas</label>
+                                <select id="card-installments">
+                                    <option value="1">1x sem juros</option>
+                                    <option value="2">2x sem juros</option>
+                                    <option value="3">3x sem juros</option>
+                                    <option value="4">4x sem juros</option>
+                                    <option value="5">5x sem juros</option>
+                                    <option value="6">6x sem juros</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="step-actions">
+                            <button class="btn-secondary" onclick="store.prevStep()">Anterior</button>
+                            <button class="btn-primary" onclick="store.finalizeOrder()">Finalizar Pedido</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="success-modal">
+        <div class="modal-content success-modal">
+            <div class="modal-header">
+                <h3>Pedido Realizado com Sucesso! 🎉</h3>
+            </div>
+            <div class="modal-body">
+                <div class="success-content">
+                    <i class="fas fa-check-circle"></i>
+                    <h4>Obrigado pela sua compra!</h4>
+                    <p>Seu pedido foi confirmado e está sendo processado.</p>
+                    <div class="order-details">
+                        <p><strong>Número do Pedido:</strong> <span id="order-number"></span></p>
+                        <p><strong>Total:</strong> <span id="order-total"></span></p>
+                        <p><strong>Forma de Pagamento:</strong> <span id="order-payment"></span></p>
+                    </div>
+                    <p>Você receberá um email de confirmação em breve.</p>
+                </div>
+                <button class="btn-primary" onclick="store.closeSuccessModal()">Continuar Comprando</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>BLACK STREET</h4>
+                    <p>Moda urbana premium para o estilo de vida moderno. Qualidade encontra street style.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h5>COMPRAR</h5>
+                    <ul>
+                        <li><a href="#">Novos Produtos</a></li>
+                        <li><a href="#">Mais Vendidos</a></li>
+                        <li><a href="#">Promoções</a></li>
+                        <li><a href="#">Coleções</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h5>AJUDA</h5>
+                    <ul>
+                        <li><a href="#">Fale Conosco</a></li>
+                        <li><a href="#">Informações de Envio</a></li>
+                        <li><a href="#">Trocas e Devoluções</a></li>
+                        <li><a href="#">Guia de Tamanhos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h5>NEWSLETTER</h5>
+                    <p>Receba 15% de desconto na primeira compra e atualizações exclusivas.</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Digite seu email">
+                        <button class="btn-primary">Inscrever</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 BLACK STREET. Todos os direitos reservados.</p>
+                <div class="footer-links">
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Serviço</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Carregando...</p>
+        </div>
+        </div>
+
+    <script src="script.js"></script>
+  </body>
+  </html>
+
+
